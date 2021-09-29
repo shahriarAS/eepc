@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from './components/HomePage/HomePage';
 import SFHomepage from './components/Suffix&Prefix.jsx/SFHomepage';
 import SFWordPage from './components/Suffix&Prefix.jsx/SFWordPage';
+import PageNotFound from './components/root/PageNotFound';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path="/suffix-prefix" exact component={SFHomepage} />
         <Route path="/suffix-prefix/:wordEndIn" exact component={SFWordPage} />
+        <Route path="*" exact component={PageNotFound} />
       </Switch>
       <Footer />
     </>
