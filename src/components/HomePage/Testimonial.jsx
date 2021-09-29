@@ -1,7 +1,7 @@
 import React from 'react'
 import shovonPhoto from "../../assets/photos/shovon.jpeg"
 import billGatesPhoto from "../../assets/photos/billgates.jpeg"
-import sakibPhoto from "../../assets/photos/sakibalhasan.gif"
+import sakibPhoto from "../../assets/photos/sakibalhasan.jpeg"
 
 function Testimonial() {
     return (

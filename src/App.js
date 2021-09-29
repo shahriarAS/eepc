@@ -4,6 +4,8 @@ import NavBar from './components/root/NavBar';
 import Footer from './components/root/Footer';
 import { Switch, Route } from 'react-router-dom';
 import HomePage from './components/HomePage/HomePage';
+import SFHomepage from './components/Suffix&Prefix.jsx/SFHomepage';
+import SFWordPage from './components/Suffix&Prefix.jsx/SFWordPage';
 
 function App() {
 
@@ -12,7 +14,9 @@ function App() {
     <>
       <NavBar />
       <Switch>
-        <Route to="/" exact component={HomePage} />
+        <Route path="/" exact component={HomePage} />
+        <Route path="/suffix-prefix" exact component={SFHomepage} />
+        <Route path="/suffix-prefix/:wordEndIn" exact component={SFWordPage} />
       </Switch>
       <Footer />
     </>
