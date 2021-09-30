@@ -83,7 +83,7 @@ function App() {
   return (
     <>
       {
-        loading_status === "loading" ? (
+        loading_status == "loading" ? (
           <LoadingPage />
         ) : (
             <>

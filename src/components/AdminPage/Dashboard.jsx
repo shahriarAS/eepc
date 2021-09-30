@@ -68,7 +68,7 @@ function Dashboard() {
                         </svg>
                     </button>
                     {
-                        (tabTitle === "Grammar") ? <GrammarDashboard /> : (tabTitle === "Suffix-Prefix") ? <SFDashboard /> : (tabTitle === "Paragraph") ? <ParagraphDashboard /> : (tabTitle === "Dialogue") ? <DialogueDashboard /> : (tabTitle === "Composition") ? <CompositionDashboard /> : null
+                        (tabTitle == "Grammar") ? <GrammarDashboard /> : (tabTitle == "Suffix-Prefix") ? <SFDashboard /> : (tabTitle == "Paragraph") ? <ParagraphDashboard /> : (tabTitle == "Dialogue") ? <DialogueDashboard /> : (tabTitle == "Composition") ? <CompositionDashboard /> : null
                     }
                 </section>
 
