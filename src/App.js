@@ -74,8 +74,12 @@ function App() {
 
   useEffect(() => {
     grabCurrentUser()
+    grabData("SFCategory", "populate_sfCategory")
+    grabData("SFData", "populate_sfData")
     grabData("VBCategory", "populate_vbCategory")
     grabData("VBData", "populate_vbData")
+    grabData("GrammarCategory", "populate_grammarCategory")
+    grabData("GrammarData", "populate_grammarData")
     grabData("ParagraphCategory", "populate_grammarCategory")
     grabData("ParagraphData", "populate_grammarData")
     grabData("ParagraphCategory", "populate_paragraphCategory")
@@ -84,8 +88,6 @@ function App() {
     grabData("CompositionData", "populate_compositionData")
     grabData("DialogueCategory", "populate_dialgoueCategory")
     grabData("DialogueData", "populate_dialgoueData")
-    grabData("SFCategory", "populate_sfCategory")
-    grabData("SFData", "populate_sfData")
     grabData("SpokenCategory", "populate_spokenCategory")
     grabData("SpokenData", "populate_spokenData", true)
   }, [])
