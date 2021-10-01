@@ -39,6 +39,7 @@ import CVDetailPage from './components/Pages/CV/CVDetailPage';
 import CVHomepage from './components/Pages/CV/CVHomepage';
 import StoryHomepage from './components/Pages/CompletingStory/StoryHomepage';
 import EmailHomepage from './components/Pages/Email/EmailHomepage';
+import SpokenDashboard from './components/AdminPage/SpokenDashboard';
 
 function App() {
 
@@ -92,6 +93,8 @@ function App() {
     grabData("VBData", "populate_vbData")
     grabData("GrammarCategory", "populate_grammarCategory")
     grabData("GrammarData", "populate_grammarData")
+    grabData("SpokenCategory", "populate_spokenCategory")
+    grabData("SpokenData", "populate_spokenData")
     grabData("ParagraphCategory", "populate_paragraphCategory")
     grabData("ParagraphData", "populate_paragraphData")
     grabData("CompositionCategory", "populate_compositionCategory")
@@ -128,6 +131,8 @@ function App() {
                 <Route path="/vocabulary/:vcategory/:title" exact component={VBWordPage} />
                 <Route path="/grammar" exact component={GrammarHomepage} />
                 <Route path="/grammar/:grammarCategory" exact component={GrammarDetailPage} />
+                <Route path="/spoken" exact component={SpokenHomepage} />
+                <Route path="/spoken/:spokenCategory" exact component={SpokenDashboard} />
                 <Route path="/written/paragraph" exact component={ParagraphHomepage} />
                 <Route path="/written/paragraph/:paragraphCategory" exact component={ParagraphDetailPage} />
                 <Route path="/written/composition" exact component={CompositionHomepage} />

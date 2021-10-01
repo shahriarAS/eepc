@@ -6,6 +6,8 @@ const initialState = {
     VBData: [{ word: "Development", bnWord: "উন্নতি" }],
     GrammarCategory: [],
     GrammarData: [],
+    SpokenCategory: [],
+    SpokenData: [],
     ParagraphCategory: [],
     ParagraphData: [],
     CompositionCategory: [],
