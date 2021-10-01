@@ -12,8 +12,18 @@ const initialState = {
     CompositionData: [],
     DialogueCategory: [],
     DialogueData: [],
-    SpokenCategory: [],
-    SpokenData: [],
+    CVCategory: [],
+    CVData: [],
+    ApplicationCategory: [],
+    ApplicationData: [],
+    LetterCategory: [],
+    LetterData: [],
+    StoryCategory: [],
+    StoryData: [],
+    GraphCategory: [],
+    GraphData: [],
+    EmailCategory: [],
+    EmailData: [],
     loading_status: "loading"
 };
 

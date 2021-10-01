@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"
-import LoadingPage from "../root/LoadingPage";
+import LoadingPage from "../../root/LoadingPage";
 
 function SFModal(props) {
     const [modalLoading, setModalLoading] = useState(true)

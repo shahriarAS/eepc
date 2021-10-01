@@ -10,6 +10,12 @@ import { getAuth, signOut } from "firebase/auth";
 import EEPCReducer from '../redux/eepcReducer'
 import VBDashboard from './VBDashboard'
 import SpokenDashboard from './SpokenDashboard'
+import ApplicationDashboard from './ApplicationDashboard'
+import StoryDashboard from './StoryDashboard'
+import EmailDashboard from './EmailDashboard'
+import LetterDashboard from './LetterDashboard'
+import CVDashboard from './CVDashboard'
+import GraphDashboard from './GraphDashboard'
 
 function Dashboard() {
     const user = useSelector(state => state.user)
@@ -42,9 +48,9 @@ function Dashboard() {
     else {
 
         return (
-            <main className="flex w-full h-full">
-                <aside className={`w-80 h-screen bg-gray shadow-md w-fulll ${showSidebar ? "" : "hidden"} sm:block`}>
-                    <div className="flex flex-col justify-between h-screen p-4 bg-gray-800">
+            <main className="flex w-full h-auto">
+                <aside className={`w-80 bg-gray shadow-md w-fulll ${showSidebar ? "" : "hidden"} sm:block`}>
+                    <div className="flex flex-col justify-between h-full p-4 bg-gray-800">
                         <div onClick={toggleSidebar} className="text-sm">
                             <div onClick={() => setTabTitle("Grammar")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Grammar</div>
                             <div onClick={() => setTabTitle("Suffix-Prefix")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Suffix & Prefix</div>
@@ -53,6 +59,12 @@ function Dashboard() {
                             <div onClick={() => setTabTitle("Paragraph")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Paragraph</div>
                             <div onClick={() => setTabTitle("Dialogue")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Dialogue</div>
                             <div onClick={() => setTabTitle("Composition")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Composition</div>
+                            <div onClick={() => setTabTitle("CV")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">CV</div>
+                            <div onClick={() => setTabTitle("Application")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Application</div>
+                            <div onClick={() => setTabTitle("Letter")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Letter</div>
+                            <div onClick={() => setTabTitle("Story")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Story</div>
+                            <div onClick={() => setTabTitle("Graph")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Graph</div>
+                            <div onClick={() => setTabTitle("Email")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Email</div>
                         </div>
 
                         <div onClick={logOutFunc} className="flex p-3 text-white bg-red-500 rounded cursor-pointer text-center text-sm">
@@ -72,9 +84,12 @@ function Dashboard() {
                         </svg>
                     </button>
                     {
-                        (tabTitle == "Grammar") ? <GrammarDashboard /> : (tabTitle == "Suffix-Prefix") ? <SFDashboard /> : 
-                        (tabTitle == "Vocabulary") ? <VBDashboard /> : 
-                        (tabTitle == "Spoken") ? <SpokenDashboard /> : (tabTitle == "Paragraph") ? <ParagraphDashboard /> : (tabTitle == "Dialogue") ? <DialogueDashboard /> : (tabTitle == "Composition") ? <CompositionDashboard /> : null
+                        (tabTitle == "Grammar") ? <GrammarDashboard /> : (tabTitle == "Suffix-Prefix") ? <SFDashboard /> :(tabTitle == "Vocabulary") ? <VBDashboard /> :
+                        (tabTitle == "Spoken") ? <SpokenDashboard /> : (tabTitle == "Paragraph") ? <ParagraphDashboard /> : (tabTitle == "Dialogue") ? <DialogueDashboard /> : (tabTitle == "Composition") ? <CompositionDashboard /> :
+                        (tabTitle == "CV") ? <CVDashboard /> :
+                        (tabTitle == "Application") ? <ApplicationDashboard /> :(tabTitle == "Letter") ? <LetterDashboard /> : (tabTitle == "Story") ? <StoryDashboard /> :
+                        (tabTitle == "Graph") ? <GraphDashboard /> :
+                        (tabTitle == "Email") ? <EmailDashboard /> : null
                     }
                 </section>
 

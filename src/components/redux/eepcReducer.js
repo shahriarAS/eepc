@@ -94,6 +94,78 @@ function EEPCReducer(state = initialState, action) {
                 ...state,
                 SpokenData: action.payload
             }
+        case "populate_cvCategory":
+            const cvCategory = Object.values(action.payload)
+            return {
+                ...state,
+                CVCategory: cvCategory
+            }
+        case "populate_cvData":
+            // console.log(action.payload)
+            return {
+                ...state,
+                CVData: action.payload
+            }
+        case "populate_applicationCategory":
+            const applicationCategory = Object.values(action.payload)
+            return {
+                ...state,
+                ApplicationCategory: applicationCategory
+            }
+        case "populate_applicationData":
+            // console.log(action.payload)
+            return {
+                ...state,
+                ApplicationData: action.payload
+            }
+        case "populate_letterCategory":
+            const letterCategory = Object.values(action.payload)
+            return {
+                ...state,
+                LetterCategory: letterCategory
+            }
+        case "populate_letterData":
+            // console.log(action.payload)
+            return {
+                ...state,
+                LetterData: action.payload
+            }
+        case "populate_storyCategory":
+            const storyCategory = Object.values(action.payload)
+            return {
+                ...state,
+                StoryCategory: storyCategory
+            }
+        case "populate_storyData":
+            // console.log(action.payload)
+            return {
+                ...state,
+                StoryData: action.payload
+            }
+        case "populate_graphCategory":
+            const graphCategory = Object.values(action.payload)
+            return {
+                ...state,
+                GraphCategory: graphCategory
+            }
+        case "populate_graphData":
+            // console.log(action.payload)
+            return {
+                ...state,
+                GraphData: action.payload
+            }
+        case "populate_emailCategory":
+            const emailCategory = Object.values(action.payload)
+            return {
+                ...state,
+                EmailCategory: emailCategory
+            }
+        case "populate_emailData":
+            // console.log(action.payload)
+            return {
+                ...state,
+                EmailData: action.payload
+            }
         case "login":
             return {
                 ...state,

@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroImg from "../../assets/photos/learnenglish.jpeg"
+import HeroImg from "../../../assets/photos/learnenglish.jpeg"
 import { Link } from 'react-router-dom'
 
 function HomeHero() {
@@ -13,7 +13,7 @@ function HomeHero() {
                     <p className="mb-8 leading-relaxed">The significance of the English Language is numerous as it's a global language now. Here, you will get a lot of ideas, techniques as well as well decorated methodologies to enhance your proficiency in English. This app has been designed for the benefit of all types of students who are studying school, college, or university.</p>
                     <div className="flex justify-center">
                         <Link to="/Grammar" className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Grammar</Link>
-                        <Link to="/suffix-prefix" className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Suffix & Prefix</Link>
+                        <Link to="/suffix-prefix" className="ml-4 inline-flex text-white bg-blue-400 border-0 py-2 px-6 focus:outline-none hover:bg-blue-500 rounded text-lg">Suffix & Prefix</Link>
                     </div>
                 </div>
                 <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
