@@ -82,6 +82,18 @@ function EEPCReducer(state = initialState, action) {
                 ...state,
                 DialogueData: action.payload
             }
+        case "populate_spokenCategory":
+            const spokenCategory = Object.values(action.payload)
+            return {
+                ...state,
+                SpokenCategory: spokenCategory
+            }
+        case "populate_spokenData":
+            // console.log(action.payload)
+            return {
+                ...state,
+                SpokenData: action.payload
+            }
         case "login":
             return {
                 ...state,

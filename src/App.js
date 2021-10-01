@@ -25,6 +25,8 @@ import CompositionHomepage from './components/Composition/CompositionHomepage';
 import CompositionDetailPage from './components/Composition/CompositionDetailPage';
 import DialogueHomepage from './components/Dialogue/DialogueHomepage';
 import DialogueDetailPage from './components/Dialogue/DialogueDetailPage';
+import SpokenHomepage from './components/Spoken/SpokenHomepage';
+import SpokenDetailPage from './components/Spoken/SpokenDetailPage';
 
 function App() {
 
@@ -56,13 +58,13 @@ function App() {
           type: dispatchType,
           payload: snapshot.val()
         })
-        if (finish) {
-          dispatch({
-            type: "finish_loading"
-          })
-        }
       } else {
         console.log("No data available");
+      }
+      if (finish) {
+        dispatch({
+          type: "finish_loading"
+        })
       }
     }).catch((error) => {
       console.error(error);
@@ -83,7 +85,9 @@ function App() {
     grabData("DialogueCategory", "populate_dialgoueCategory")
     grabData("DialogueData", "populate_dialgoueData")
     grabData("SFCategory", "populate_sfCategory")
-    grabData("SFData", "populate_sfData", true)
+    grabData("SFData", "populate_sfData")
+    grabData("SpokenCategory", "populate_spokenCategory")
+    grabData("SpokenData", "populate_spokenData", true)
   }, [])
 
   return (
@@ -108,6 +112,8 @@ function App() {
                 <Route path="/written/composition/:compositionCategory" exact component={CompositionDetailPage} />
                 <Route path="/written/dialogue" exact component={DialogueHomepage} />
                 <Route path="/written/dialogue/:dialogueCategory" exact component={DialogueDetailPage} />
+                <Route path="/spoken" exact component={SpokenHomepage} />
+                <Route path="/spoken/:spokenCategory" exact component={SpokenDetailPage} />
                 <Route path="/login" exact component={LoginPage} />
                 <Route path="/dashboard" exact component={Dashboard} />
                 <Route path="*" exact component={PageNotFound} />

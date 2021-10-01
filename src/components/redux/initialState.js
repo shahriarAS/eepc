@@ -12,6 +12,8 @@ const initialState = {
     CompositionData: [],
     DialogueCategory: [],
     DialogueData: [],
+    SpokenCategory: [],
+    SpokenData: [],
     loading_status: "loading"
 };
 

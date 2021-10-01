@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getAuth, signOut } from "firebase/auth";
 import EEPCReducer from '../redux/eepcReducer'
 import VBDashboard from './VBDashboard'
+import SpokenDashboard from './SpokenDashboard'
 
 function Dashboard() {
     const user = useSelector(state => state.user)
@@ -48,6 +49,7 @@ function Dashboard() {
                             <div onClick={() => setTabTitle("Grammar")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Grammar</div>
                             <div onClick={() => setTabTitle("Suffix-Prefix")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Suffix & Prefix</div>
                             <div onClick={() => setTabTitle("Vocabulary")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Vocabulary</div>
+                            <div onClick={() => setTabTitle("Spoken")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Spoken</div>
                             <div onClick={() => setTabTitle("Paragraph")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Paragraph</div>
                             <div onClick={() => setTabTitle("Dialogue")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Dialogue</div>
                             <div onClick={() => setTabTitle("Composition")} className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Composition</div>
@@ -71,7 +73,8 @@ function Dashboard() {
                     </button>
                     {
                         (tabTitle == "Grammar") ? <GrammarDashboard /> : (tabTitle == "Suffix-Prefix") ? <SFDashboard /> : 
-                        (tabTitle == "Vocabulary") ? <VBDashboard /> : (tabTitle == "Paragraph") ? <ParagraphDashboard /> : (tabTitle == "Dialogue") ? <DialogueDashboard /> : (tabTitle == "Composition") ? <CompositionDashboard /> : null
+                        (tabTitle == "Vocabulary") ? <VBDashboard /> : 
+                        (tabTitle == "Spoken") ? <SpokenDashboard /> : (tabTitle == "Paragraph") ? <ParagraphDashboard /> : (tabTitle == "Dialogue") ? <DialogueDashboard /> : (tabTitle == "Composition") ? <CompositionDashboard /> : null
                     }
                 </section>
 
