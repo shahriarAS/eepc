@@ -132,7 +132,7 @@ function App() {
                 <Route path="/grammar" exact component={GrammarHomepage} />
                 <Route path="/grammar/:grammarCategory" exact component={GrammarDetailPage} />
                 <Route path="/spoken" exact component={SpokenHomepage} />
-                <Route path="/spoken/:spokenCategory" exact component={SpokenDashboard} />
+                <Route path="/spoken/:spokenCategory" exact component={SpokenDetailPage} />
                 <Route path="/written/paragraph" exact component={ParagraphHomepage} />
                 <Route path="/written/paragraph/:paragraphCategory" exact component={ParagraphDetailPage} />
                 <Route path="/written/composition" exact component={CompositionHomepage} />
