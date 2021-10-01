@@ -22,7 +22,7 @@ function CompositionDetailPage() {
                     <div className="flex justify-center w-full">
                         <div onCopy={(e) => preventCopy(e)} className="bg-white shadow-xl rounded-lg w-full md:w-1/2 mx-2 p-4  ">
                             <JoditEditor
-                                value={"CompositionDatassssssssss"}
+                                value={CompositionData}
                                 config={{ readonly: true, toolbar: false }}
                                 tabIndex={1} // tabIndex of textarea
                             />
