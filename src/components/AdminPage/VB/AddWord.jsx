@@ -4,21 +4,25 @@ import { useSelector } from 'react-redux'
 import { getDatabase, ref, set } from "firebase/database";
 
 function AddWord() {
-    const SFCategory = useSelector(state => state.SFCategory)
-    const [categorySelect, setcategorySelect] = useState(SFCategory && SFCategory[0].slug)
+    const VBCategory = useSelector(state => state.VBCategory)
+    const [categorySelect, setcategorySelect] = useState(VBCategory && VBCategory[0].slug)
 
-    const SFData = useSelector(state => state.SFData)
+    const VBData = useSelector(state => state.VBData)
+    // const WordList = {}
+    // for (let i = 0; i <= (VBData && VBData["bnWords"].split("\n").length - 1); i++) {
+    //     WordList[VBData["words"].split("\n")[i].trim().replace(/\./g, '')] = VBData["bnWords"].split("\n")[i].trim().replace(/\./g, '')
+    // }
 
     const formik = useFormik({
         enableReinitialize: true,
         initialValues: {
-            words: SFData[categorySelect] ? SFData[categorySelect]["words"] : "",
-            bnWords: SFData[categorySelect] ? SFData[categorySelect]["bnWords"] : ""
+            words: VBData[categorySelect] ? VBData[categorySelect]["words"] : "",
+            bnWords: VBData[categorySelect] ? VBData[categorySelect]["bnWords"] : ""
         },
 
         onSubmit: values => {
             const db = getDatabase();
-            set(ref(db, 'SFData/' + categorySelect), {
+            set(ref(db, 'VBData/' + categorySelect), {
                 words: values.words,
                 bnWords: values.bnWords,
             })
@@ -33,14 +37,14 @@ function AddWord() {
                     <div
                         className="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4"
                     >
-                        Add Suffix & Prefix Word
+                        Add Vocabulary
             </div>
                     <div className="mb-4">
                         <label
                             className="block text-gray-700 text-sm font-normal mb-2"
                             htmlFor="category"
                         >
-                            Suffix/Prefix Category
+                            Vocabulary Category
               </label>
                         <select
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -50,8 +54,8 @@ function AddWord() {
                             onChange={(e) => setcategorySelect(e.target.value)}
                         >
                             {
-                                SFCategory.map(sfItem => (
-                                    <option key={Math.random()} value={sfItem.slug}>{sfItem.title}</option>
+                                VBCategory.map(VBItem => (
+                                    <option key={Math.random()} value={VBItem.slug}>{VBItem.title}</option>
                                 ))
                             }
                         </select>
