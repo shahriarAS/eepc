@@ -9725,6 +9725,11 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
+react-caroussel@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-caroussel/-/react-caroussel-1.0.6.tgz#5e8dfbae2cd0a64239ea9da4049b5def89487e6c"
+  integrity sha512-lFz2e8ki0SUR2SzgiVIKNBtpvSuBLdANnos98vDcv7mS7kwfEnf9gjdtbYj8yDuhBfQJ7lh3m3gflMCJUNLxLA==
+
 react-dev-utils@^11.0.3:
   version "11.0.4"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-11.0.4.tgz#a7ccb60257a1ca2e0efe7a83e38e6700d17aa37a"
