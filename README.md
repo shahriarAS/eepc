@@ -1,3 +1,5 @@
+EEPC is a complete English learning platform for every aspects of students. I built this project for my beloved teacher. Here, you will get a lot of ideas, techniques as well as well decorated methodologies to enhance your proficiency in English. This app has been designed for the benefit of all types of students who are studying school, college, or university.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
