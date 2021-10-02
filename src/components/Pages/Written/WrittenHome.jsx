@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ClapButton from 'react-clap-button';
 
 function WrittenHome() {
     const writtenList = [
@@ -60,14 +59,6 @@ function WrittenHome() {
                         </ul>
                     </div>
                 </div>
-                {/* <ClapButton
-                count={0}
-                countTotal={0}
-                maxCount={50}
-                isClicked={false}
-                onCountChange={onCountChange}
-                iconComponent={props => <CustomIcon {...props} size={38} 
-                /> */}
             </div>
         </div>
     )
