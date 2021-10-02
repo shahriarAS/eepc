@@ -40,8 +40,13 @@ import CVHomepage from './components/Pages/CV/CVHomepage';
 import StoryHomepage from './components/Pages/CompletingStory/StoryHomepage';
 import EmailHomepage from './components/Pages/Email/EmailHomepage';
 import SpokenDashboard from './components/AdminPage/SpokenDashboard';
+import WrittenHome from './components/Pages/Written/WrittenHome';
+import ReactGA from 'react-ga';
 
 function App() {
+
+  ReactGA.initialize('UA-209060295-1');
+  ReactGA.pageview(window.location.pathname + window.location.search);
 
   const loading_status = useSelector(state => state.loading_status)
   const dispatch = useDispatch(EEPCReducer)
@@ -133,6 +138,7 @@ function App() {
                 <Route path="/grammar/:grammarCategory" exact component={GrammarDetailPage} />
                 <Route path="/spoken" exact component={SpokenHomepage} />
                 <Route path="/spoken/:spokenCategory" exact component={SpokenDetailPage} />
+                <Route path="/written" exact component={WrittenHome} />
                 <Route path="/written/paragraph" exact component={ParagraphHomepage} />
                 <Route path="/written/paragraph/:paragraphCategory" exact component={ParagraphDetailPage} />
                 <Route path="/written/composition" exact component={CompositionHomepage} />

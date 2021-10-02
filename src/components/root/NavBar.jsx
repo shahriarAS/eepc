@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useRef, useEffect } from 'react';
 import { NavLink, Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 import EEPCReducer from "../redux/eepcReducer";
@@ -6,11 +6,18 @@ import { getAuth, signOut } from "firebase/auth";
 import logo from "../../assets/photos/logo.png"
 
 function NavBar() {
+    const ref = useRef(null)
     const user = useSelector(state => state.user)
     const dispatch = useDispatch(EEPCReducer)
 
     const [visibleMenu, setVisibleMenu] = useState(false)
     const [DropDown, setDropDown] = useState(false)
+
+    const clickedOutside = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+            setDropDown(false)
+        }
+    }
 
     const toggleMenu = () => {
         setVisibleMenu(visibleMenu ? false : true)
@@ -37,6 +44,13 @@ function NavBar() {
         });
     }
 
+    useEffect(() => {
+        document.addEventListener("click", clickedOutside, true);
+        return () => {
+            document.removeEventListener("click", clickedOutside, true);
+        };
+    });
+
     return (
         <div className="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
             <div className="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
@@ -54,7 +68,7 @@ function NavBar() {
                     <NavLink onClick={toggleMenu} to="/suffix-prefix" activeclassname="text-gray-900 bg-gray-200" className="px-4 py-2 mt-2 text-sm font-semibold rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">Suffix & Prefix</NavLink>
                     <NavLink onClick={toggleMenu} to="/vocabulary" activeclassname="text-gray-900 bg-gray-200" className="px-4 py-2 mt-2 text-sm font-semibold rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Vocabulary</NavLink>
                     <NavLink onClick={toggleMenu} to="/spoken" activeclassname="text-gray-900 bg-gray-200" className="px-4 py-2 mt-2 text-sm font-semibold rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Spoken</NavLink>
-                    <div onClick={toggleDrop} className="relative">
+                    <div onClick={toggleDrop} ref={ref} className="relative">
                         <button className="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
                             <span>Written</span>
                             <svg fill="currentColor" viewBox="0 0 20 20" className={`${DropDown ? "rotate-180" : "rotate-0"} inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1`}><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
