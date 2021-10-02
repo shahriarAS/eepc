@@ -23,7 +23,7 @@ function Testimonial() {
                     <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
                         <div className="h-full text-center">
                             <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={nusratjahankeya} />
-                            <p className="leading-relaxed">The best ever platform to learn English in Bangladesh. I really appreciate the effort which gives us a lot of support while learning English.
+                            <p className="leading-relaxed">Ever since I first visited it, I have repeatedly visited this website, especially the suffix & prefix section. And I wonder how many words I can easily learn.
 </p>
                             <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
                             <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">Nusrat Jahan Keya</h2>
@@ -33,8 +33,7 @@ function Testimonial() {
                     <div className="lg:w-1/3 lg:mb-0 p-4">
                         <div className="h-full text-center">
                             <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={sakibmollick} />
-                            <p className="leading-relaxed">I supposed to think English just a subject like math or physics. But this platform gave me the 
-</p>
+                            <p className="leading-relaxed">The best website I've ever seen where English is so easy and beautiful. Especially the resources in the written section are very helpful.</p>
                             <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
                             <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">MD. Sakib Mollick</h2>
                             <p className="text-gray-500">Student Of Class 10</p>
