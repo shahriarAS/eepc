@@ -11,7 +11,7 @@ import Dashboard from './components/AdminPage/Dashboard';
 import LoginPage from './components/AdminPage/LoginPage';
 import firebase from "./components/config/firebase"
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { getDatabase, ref, child, get } from "firebase/database";
+import { getDatabase, ref, onValue } from "firebase/database";
 import { useDispatch, useSelector } from 'react-redux';
 import EEPCReducer from './components/redux/eepcReducer';
 import LoadingPage from './components/root/LoadingPage';
@@ -68,26 +68,53 @@ function App() {
   }
 
   const grabData = (dbPath, dispatchType, finish = false) => {
+    const db = getDatabase();
 
-    const dbRef = ref(getDatabase());
-    get(child(dbRef, `${dbPath}/`)).then((snapshot) => {
+    return onValue(ref(db, dbPath), (snapshot) => {
       if (snapshot.exists()) {
         dispatch({
           type: dispatchType,
           payload: snapshot.val()
         })
+        if (finish) {
+          dispatch({
+            type: "finish_loading"
+          })
+        }
       } else {
         console.log("No data available");
+        if (finish) {
+          dispatch({
+            type: "finish_loading"
+          })
+        }
       }
-      if (finish) {
-        dispatch({
-          type: "finish_loading"
-        })
-      }
-    }).catch((error) => {
-      console.error(error);
+    }, {
+      onlyOnce: true
     });
   }
+
+  // const grabData = (dbPath, dispatchType, finish = false) => {
+
+  //   const dbRef = ref(getDatabase());
+  //   get(child(dbRef, `${dbPath}/`)).then((snapshot) => {
+  //     if (snapshot.exists()) {
+  //       dispatch({
+  //         type: dispatchType,
+  //         payload: snapshot.val()
+  //       })
+  //     } else {
+  //       console.log("No data available");
+  //     }
+  //     if (finish) {
+  //       dispatch({
+  //         type: "finish_loading"
+  //       })
+  //     }
+  //   }).catch((error) => {
+  //     console.error(error);
+  //   });
+  // }
 
 
   useEffect(() => {
