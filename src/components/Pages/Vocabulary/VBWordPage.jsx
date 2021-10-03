@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import VBModal from './VBModal'
+import { Helmet } from 'react-helmet'
 
 function VBWordPage() {
     const [showModal, setShowModal] = useState(false)
@@ -15,7 +16,7 @@ function VBWordPage() {
     console.log(vcategory, title)
 
     const VBData = useSelector(state => state.VBData)[vcategory]
-    
+
     const WordList = {}
     for (let i = 0; i <= (VBData && VBData["bnWords"].split("\n").length - 1); i++) {
         WordList[VBData["words"].split("\n")[i].trim().replace(/\./g, '')] = VBData["bnWords"].split("\n")[i].trim().replace(/\./g, '')
@@ -37,6 +38,10 @@ function VBWordPage() {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{title} | EEPC</title>
+            </Helmet>
             {
                 showModal ? <VBModal word={modalProps.word} bnWord={modalProps.bnWord} setShowModal={setShowModal} /> : null
             }

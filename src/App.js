@@ -42,6 +42,7 @@ import EmailHomepage from './components/Pages/Email/EmailHomepage';
 import SpokenDashboard from './components/AdminPage/SpokenDashboard';
 import WrittenHome from './components/Pages/Written/WrittenHome';
 import ReactGA from 'react-ga';
+import { Helmet } from "react-helmet";
 
 function App() {
 
@@ -149,6 +150,10 @@ function App() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>EEPC | Learn English With The Modern Way</title>
+      </Helmet>
       {
         loading_status == "loading" ? (
           <LoadingPage />

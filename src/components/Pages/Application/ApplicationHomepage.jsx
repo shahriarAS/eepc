@@ -1,11 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { Helmet } from 'react-helmet'
 
 function ApplicationHomepage() {
     const ApplicationCategory = useSelector(state => state.ApplicationCategory)
 
     return (
+        <>
+        <Helmet>
+        <meta charSet="utf-8" />
+        <title>Application | EEPC</title>
+      </Helmet>
         <div className="flex justify-center h-full pb-8 bg-gray-200">
             <div className="container">
                 <div className="flex justify-center p-4 my-4">
@@ -25,6 +31,7 @@ function ApplicationHomepage() {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

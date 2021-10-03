@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import SFModal from './SFModal'
+import { Helmet } from 'react-helmet';
 
 function SFWordPage() {
     const [showModal, setShowModal] = useState(false)
@@ -34,6 +35,10 @@ function SFWordPage() {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{title} | EEPC</title>
+            </Helmet>
             {
                 showModal ? <SFModal word={modalProps.word} bnWord={modalProps.bnWord} setShowModal={setShowModal} /> : null
             }
