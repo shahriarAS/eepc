@@ -1,5 +1,5 @@
 import React from 'react'
-import shovonPhoto from "../../../assets/photos/shovon.jpeg"
+import nayeemPhoto from "../../../assets/photos/Nayeem.jpeg"
 import sakibmollick from "../../../assets/photos/sakibmollick.jpeg"
 import nusratjahankeya from "../../../assets/photos/Nusrat-Jahan-Keya.jpeg"
 
@@ -12,12 +12,12 @@ function Testimonial() {
                 <div className="flex flex-wrap -m-4">
                     <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
                         <div className="h-full text-center">
-                            <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={shovonPhoto} />
-                            <p className="leading-relaxed">The best ever platform to learn English in Bangladesh. I really appreciate the effort which gives us a lot of support while learning English.
+                            <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={nayeemPhoto} />
+                            <p className="leading-relaxed">। have really been fascinated by the teaching method of this website. Hopefully, this site will be very useful for those who are interested in learning English.
 </p>
                             <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
-                            <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">Shahriar Ahmed Shovon</h2>
-                            <p className="text-gray-500">Full Stack Web Developer</p>
+                            <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">Md. Nayeem Ahmed</h2>
+                            <p className="text-gray-500">SSC Candidate 2021</p>
                         </div>
                     </div>
                     <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">

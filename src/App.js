@@ -43,6 +43,10 @@ import SpokenDashboard from './components/AdminPage/SpokenDashboard';
 import WrittenHome from './components/Pages/Written/WrittenHome';
 import ReactGA from 'react-ga';
 import { Helmet } from "react-helmet";
+import About from './components/Pages/Legal/About';
+import Disclaimer from './components/Pages/Legal/Disclaimer';
+import PrivacyPolicy from './components/Pages/Legal/PrivacyPolicy';
+import Contact from './components/Pages/Legal/Contact';
 
 function App() {
 
@@ -191,6 +195,10 @@ function App() {
                 <Route path="/written/email/:emailCategory" exact component={EmailDetailPage} />
                 <Route path="/login" exact component={LoginPage} />
                 <Route path="/dashboard" exact component={Dashboard} />
+                <Route path="/about" exact component={About} />
+                <Route path="/disclaimer" exact component={Disclaimer} />
+                <Route path="/privacy-policy" exact component={PrivacyPolicy} />
+                <Route path="/contact" exact component={Contact} />
                 <Route path="*" exact component={PageNotFound} />
               </Switch>
               <Footer />
