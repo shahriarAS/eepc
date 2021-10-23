@@ -3,7 +3,7 @@ import React from "react";
 function About() {
   return (
     <div className="flex justify-center h-full pb-8 bg-gray-200">
-      <div className="container py-8 w-2/4">
+      <div className="container py-8 w-full px-4 md:px-0 md:w-2/4">
         <div className="my-4 flex flex-col justify-center items-center">
           <h1 className="text-3xl text-blue-500">About EEPC</h1>
         </div>
